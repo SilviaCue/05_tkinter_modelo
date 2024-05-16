@@ -11,7 +11,7 @@ arte = DiffusionPipeline.from_pretrained(
     "lambdalabs/sd-image-variations-diffusers")
 
 
-# Función para abrir el explorador de archivos y seleccionar una imagen
+# Función para abrir el explorador de archivos y seleccionar varias imagenes
 def seleccionar_imagenes():
     rutas_imagenes = filedialog.askopenfilenames()
     if rutas_imagenes:
@@ -47,7 +47,7 @@ ventana.title("Aplicación de Procesamiento de Imágenes")
 contenedor = ttk.Frame(ventana, padding=50)
 contenedor.grid(row=0, column=0, sticky="nsew", padx=80, pady=80)
 
-# Etiqueta de título con fuente más grande
+# Título con fuente más grande
 ttk.Label(contenedor, text="Aplicación de Procesamiento de Imágenes", font=("Arial", 20)).grid(
     row=0, column=0, columnspan=12, pady=(20, 10))
 
@@ -58,12 +58,12 @@ style = ttk.Style()
 style.configure("Custom.TButton", background="grey",
                 foreground="black", font=("Arial", 16), padding=(10, 10))
 
-# Botón para seleccionar imagen
+# Botón para seleccionar imagenes
 boton_seleccionar = ttk.Button(
     contenedor, text="Seleccionar Imagen", command=seleccionar_imagenes, style="Custom.TButton")
 boton_seleccionar.grid(row=1, column=0, padx=10, pady=20)
 
-# Botón para procesar imagen
+# Botón para procesar imagenes
 boton_procesar = ttk.Button(contenedor, text="Procesar Imagen", command=lambda: procesar_imagenes(
     mostrar_imagen_procesada), style="Custom.TButton")
 boton_procesar.grid(row=1, column=8, padx=10, pady=20)
